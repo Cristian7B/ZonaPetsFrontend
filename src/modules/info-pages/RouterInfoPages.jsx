@@ -13,12 +13,13 @@ import { InicialLandingLogin } from "../principal-pages/loginUser/components/Ini
 import { AccountLogin } from "../principal-pages/loginUser/components/AccountLogin";
 import { AccountRegister } from "../principal-pages/loginUser/components/AccountRegister";
 import { DataUserProvider } from "../principal-pages/loginUser/context/DataUserContext";
-import { Tyc } from "./pages/terminosycondiciones/Tyc";
+import { Tyc } from "./pages/terminosycondiciones/components/Tyc";
 import { Afiliate } from "./pages/afiliate/components/Afiliate";
 import { PremiumLanding } from "./pages/premium/PremiumLanding";
 import { FooterToolBar } from "../general/components/FooterToolBar";
 import { useWidth } from "../general/hooks/useWidth";
 import { ZonaPets } from "../main-page/components/ZonaPets";
+import { Politicas } from "./pages/politicasdeprivacidad/components/Politicas";
 
 export function RouterInfoPages() {
     const width = useWidth()
@@ -35,7 +36,8 @@ export function RouterInfoPages() {
                     <Routes>
                         <Route path="/" element={<ZonaPets/>}/>
                         <Route path="/acercade" element={<AcercaDe />} />
-                        <Route path="/terminosycondiciones" element={<Tyc />} />
+                        <Route path="/terminos" element={<Tyc />} />
+                        <Route path="/politicas" element={<Politicas/>} />
                         <Route path="/afiliate" element={<Afiliate />} />
                         <Route path="/premium" element={<PremiumLanding />} />
                         <Route path="/contacto" element={<Contacto />} />

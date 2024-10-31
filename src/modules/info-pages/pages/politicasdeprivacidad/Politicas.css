@@ -1,0 +1,9 @@
+.itemTermOrPrivacyContainer ul {
+    padding: 0px 50px;
+    color: #525252;
+    font-family: "Rethink Sans";
+}
+
+.itemTermOrPrivacyContainer ul li , .itemTermOrPrivacyContainer p{
+    font-family: "Rethink Sans";
+}
