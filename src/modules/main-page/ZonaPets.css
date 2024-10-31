@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+.contentNav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.navProvisional {
+    top: 20px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    position: fixed;
+    width: 800px;
+    background: rgba(180, 180, 180, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.6px);
+    -webkit-backdrop-filter: blur(15.6px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    z-index: 1000;
+}
+
+.navProvisional.dark-text {
+    color: #000;
+}
+
+
+.sideLeftNav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sideRightNav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sideRightNav button {
+    border: 0;
+    background-color: #6967a5;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-family: "Rethink Sans";
+}
+
+.navProvisional a{
+    color: #fff;
+    font-family: "Rethink Sans";
+    text-decoration: none;
+}
+
+.menuBarZonaPets {
+    width: 35px;
+    display: none;
+}
+
+.navResponsiveGeneralZonaPets {
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    height: 320px;
+    width: 100%;
+    background-color: #d6d6d6;
+    top: 0;
+    left: 0;
+    background: rgba(214, 214, 214, 0.69);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11px);
+    -webkit-backdrop-filter: blur(11px);
+    border: 1px solid rgba(214, 214, 214, 1);
+}
+
+.anchordUrlFromNavZonaPets {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.navResponsiveGeneralZonaPets hr {
+    margin-top: 10px;
+    /* margin-bottom: 10px; */
+}
+
+.navResponsiveGeneralZonaPets a {
+    text-decoration: none;
+    font-family: "Rethink Sans";
+    color: #6967a5;
+}
+
+.navResponsiveGeneralZonaPets button {
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 0;
+    color: #fff;
+    /* From https://css.glass */
+    background: rgba(105, 103, 165, 0.8);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border: 1px solid rgba(105, 103, 165, 0.63);
+}
+
+.containerLinksNavResponsive {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 110px;
+    padding: 0px 20px;
+}
+
+.generalContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerFromZonaPets {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.37), #FFF),
+                url("./static/assets/mockupbg.webp");
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+}
+
+
+
+.headerFromZonaPets img {
+    margin-top: 50px;
+    width: 1000px;
+    border-radius: 20px;
+}
+
+@media(width <= 1000px) {
+    .headerFromZonaPets img {
+        width: 800px;
+    }
+}
+
+@media(width <= 800px) {
+    .headerFromZonaPets img {
+        width: 600px;
+    }
+}
+
+@media(width <= 600px) {
+    .headerFromZonaPets img {
+        width: 90%;
+        border-radius: 10px;
+    }
+
+    .allContainerFirstZonaPets {
+        height: 90vh;
+    }
+}
+
+
+
+.provisionalHeader {
+    margin-top: 110px;
+    font-size: 30px;
+    width: 700px;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -0.5px;
+    line-height: 60px;
+}
+
+@media(width <= 700px) {
+    .provisionalHeader {
+        width: 500px;
+    }
+}
+
+@media(width <= 500px) {
+    .provisionalHeader {
+        width: 100%;
+        font-size: 25px;
+        line-height: 55px;
+        margin-top: 140px;
+    }
+}
+
+.titleFromZonaPets {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 700px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.6px);
+    -webkit-backdrop-filter: blur(15.6px);
+    border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.titleFromZonaPets h1 {
+    font-size: 35px;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    font-style: normal;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+    
+}
+
+.titleFromZonaPets p {
+    color: #fff;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.buttonsFromZonaPets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.buttonsFromZonaPets a {
+    text-decoration: none;
+}
+
+.buttonsFromZonaPets .mapaFromZonaPets {
+    padding: 16px 32px;
+    width: 205px;
+    height: 50px;
+    background: #FFFFFF;
+    box-shadow: 0px 3px 8px rgba(136, 144, 194, 0.25), 0px 7px 21px rgba(37, 44, 97, 0.2);
+    border-radius: 30px;
+    font-weight: 600;
+    color: #1385F0;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    outline: none;
+    border: 0;
+}
+
+.buttonsFromZonaPets .registrarFromZonaPets {
+    padding: 16px 32px;
+    width: 205px;
+    height: 50px;
+    background: #0F5B9E;
+    box-shadow: 0px 3px 8px rgba(136, 144, 194, 0.25), 0px 7px 21px rgba(37, 44, 97, 0.2);
+    border-radius: 30px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    outline: none;
+    border: 0;
+}
+
+.headerArticlesInfo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerMainInformation {
+    display: flex;
+    width: 900px;
+    gap: 30px;
+    text-wrap: balance;
+}
+
+.informationCardHeader {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 20px;
+/* From https://css.glass */
+    border: 3px solid #ebebeb;
+    border-radius: 16px;
+}
+
+.informationCardHeader h3 {
+    color: #6791B8;
+}
+
+.informationCardHeader p {
+    font-family: "Rethink Sans";
+    color: #6791b8c7;
+}
+
+.allTecnologiesApp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.centerGridZonaPets {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridContainerZonaPets {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    /* grid-template-columns: repeat(500px, minmax()); */
+    gap: 30px;
+    width: 1150px;
+}
+
+.gridContainerZonaPets article {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 16px;
+    align-items: center;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15.6px);
+    -webkit-backdrop-filter: blur(15.6px);
+    border: 5px solid #ebebeb;
+    /* height: 500px; */
+}
+
+
+.gridContainerZonaPets article .description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContentGridZonaPets1 img, .cardContentGridZonaPets4 img{
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 69%, rgba(0, 0, 0, 0) 100%);
+}
+
+.cardContentGridZonaPets3 img {
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+.gridContainerZonaPets article h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #5e5e5e;
+}
+
+.gridContainerZonaPets article p {
+    text-align: center;
+    font-size: 13px;
+    text-wrap: balance;
+    color: #999;
+}
+
+.gridContainerZonaPets img {
+    width: 500px;
+}
+
+.centerTitleZonaPets {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.titleFromZonaPetsDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #7197B9;
+}
+
+.titleFromZonaPetsDiv h1 {
+    font-size: 50px;
+}
+
+.titleFromZonaPetsDiv p {
+    font-size: 19px;
+    font-family: "Rethink Sans";
+    font-weight: 500;
+    margin-top: 7px;
+    color: #5e5e5e;
+}
+
+.buttonsTitleFromZonaPets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.buttonsTitleFromZonaPets a {
+    text-decoration: none;
+}
+
+.buttonsTitleFromZonaPets button {
+    font-family: "Rethink Sans";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    border: 2px solid #ebebeb;
+    border-radius: 10px;
+    padding: 8px 16px;
+    color: #5e5e5e;
+    gap: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+.buttonsTitleFromZonaPets button:hover {
+    opacity: 0.7;
+}
+
+.containerAllCardZonaPets {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-wrap: balance;
+    margin-bottom: 150px;
+}
+
+.imgAllRegister {
+    width: 1150px;
+    margin-top: 35px;
+    border-radius: 20px;
+}
+
+.imgAllRegisterResponsive {
+    width: 100%;
+    display: none;
+    border-radius: 20px;
+}
+.cardContainerIconZonaPets {
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    width: 1150px;
+}
+
+.cardContainerIconZonaPets p {
+    font-family: "Rethink Sans";
+    font-weight: 600;
+    color: #5e5e5e;
+}
+
+.leftSideContainerIcon h1 {
+    font-size: 50px;
+    color: #6967a5;
+}
+
+.leftSideContainerIcon a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+
+.leftSideContainerIcon a p {
+    color: #1385F0;
+}
+
+.rightSideContainerIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.containerCoatZonaPets {
+    display: flex;
+}
+
+.containerCoatZonaPets h3 {
+    font-size: 16px;
+    color: #6967a5;
+    font-weight: 500;
+}
+
+.containerTextFromIcon {
+    margin-left: 10px;
+}
+
+
+
+/*Footer de ZonaPets*/
+.zonapets-footer-top {
+    display: flex;
+}
+
+.zonapets-footer-logo-footer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.zonapets-footer-img-divfooter {
+    display: flex;
+    align-items: center;
+}
+
+.zonapets-footer-img-divfooter1 {
+    display: none;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.zonapets-footer-img-footer {
+    width: 60px;
+}
+
+.zonapets-footer-logo-title {
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    margin-left: 10px;
+    font-style: normal;
+    font-family: 'Poppins';
+    font-weight: 600;
+    line-height: 38px;
+}
+
+.zonapets-footer-social-media {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 100px;
+    margin-bottom: 10%;
+}
+
+.zonapets-footer-plus-icon3 {
+    width: 25px;
+    height: 28.08px;
+    color: #fff;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.zonapets-footer-description-footer {
+    display: flex;
+    width: 100%;
+}
+
+.zonapets-footer-footer-container {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.zonapets-footer-description-footer h1 {
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 16px;
+}
+
+.zonapets-footer-footer-divs {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.zonapets-footer-width-url {
+    display: flex;
+    flex-direction: column;
+    margin-right: 70px;
+    width: 150px;
+}
+
+.zonapets-footer-url-footer {
+    padding: 0px 0px 20px 0px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 30px;
+}
+
+.zonapets-footer-url-footer:hover {
+    text-decoration: underline;
+}
+
+.zonapets-footer hr {
+    color: #fff;
+    margin-top: 30px;
+}
+
+.zonapets-footer-bottom {
+    margin-top: 30px;
+}
+
+.zonapets-footer-copyrigth {
+    color: #fff;
+}
+
+.zonapets-footer-copyrigth2 {
+    margin-top: 10px;
+    color: #0F5B9E;
+    font-weight: 800;
+}
+
+.zonapets-footer-copyrigth2 a {
+    text-decoration: none;
+    cursor: text;
+    color: #fff;
+    font-weight: 800;
+}
+
+@media(max-width: 1300px) {
+    .zonapets-footer-top {
+        flex-direction: column;
+    }
+
+    .zonapets-footer-logo-footer {
+        order: 3;
+        width: 100%;
+    }
+
+    .zonapets-footer-description-footer {
+        order: 2;
+    }
+
+    .zonapets-footer-footer-container {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+
+    .zonapets-footer-img-divfooter {
+        display: none;
+    }
+
+    .zonapets-footer-img-divfooter1 {
+        display: flex;
+    }
+
+    .zonapets-footer {
+        padding: 40px;
+    }
+
+    .zonapets-footer-footer-divs {
+        margin-right: auto;
+    }
+
+    .zonapets-footer-social-media {
+        padding-right: 0px;
+    }
+}
+
+@media(max-width:500px) {
+    .zonapets-footer-footer-divs {
+        width: 50%;
+    }
+    
+    .gridContainerZonaPets {
+        grid-template-columns: 400px;
+        width: fit-content;
+    }
+
+    .gridContainerZonaPets img {
+        width: 100%;
+    }
+}
+
+@media(width <= 800px) {
+    .navProvisional {
+        width: 600px;
+    }
+}
+
+@media(width <= 600px) {
+    .navProvisional {
+        width: 80%;
+    }
+
+    .menuBarZonaPets {
+        display: block;
+    }
+
+    .sideLeftNav {
+        display: none;
+    }
+
+    .sideRightNav {
+        display: none;
+    }
+
+    .titleFromZonaPetsDiv {
+        width: 90%;
+        text-align: center;
+    }
+
+}
+
+@media(width <= 1150px) {
+    .imgAllRegister {
+        width: 90%;
+    }
+
+    .cardContainerIconZonaPets {
+        width: 90%;
+    }
+}
+
+@media(width <= 720px) {
+    .cardContainerIconZonaPets {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .imgAllRegisterResponsive {
+        display: block;
+    }
+
+    .imgAllRegister {
+        display: none;
+    }
+
+    .containerAllCardZonaPets {
+        margin-bottom: 50px;
+    }
+
+    .centerGridZonaPets {
+        margin-top: 120px;
+    }
+
+    .leftSideContainerIcon h1 {
+        font-size: 40px;
+    }
+
+}
+
+@media(width <= 400px) {
+    .gridContainerZonaPets {
+        grid-template-columns: 350px;
+    }
+}

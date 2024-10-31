@@ -1,0 +1,62 @@
+.navGeneralTool {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1000000;
+}
+
+.navGeneralTool-box {
+    display: flex;
+    padding: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 16px 0px #4444;
+    border-radius: 8px;
+}
+
+.navGeneralTool-container {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.navGeneralTool-item {
+    display: flex;
+    position: relative;
+    padding: 2px;
+    border-radius: 8px;
+}
+
+.navGeneralTool-item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2f3046;
+    text-decoration: none;
+    padding: 7px;
+}
+
+.navGeneralTool-item-icon {
+    transition: margin-top 250ms ease-in-out, box-shadow 250ms ease-in-out;
+    width: 1.8em;
+    height: 1.8em;
+}
+
+
+.navGeneralTool-item-text {
+    position: absolute;
+    bottom: -5px;
+    transform: scale(0);
+    transition: transform 250ms ease-in-out;
+    color: #999;
+}
+
+.navGeneralTool-item {
+    &.active {
+        transition: all 250ms ease-in-out;
+        background-color: #bbbbbb60;
+    }
+}
