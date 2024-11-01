@@ -11,11 +11,11 @@ export function FirstTitle() {
                 <Link className="toMapaTitleZonaPets" to="/mapa">
                     <button className="buttonTitleFromZonaPets">
                         <img src={earthIcon} width="25px" alt="Icono de la tierra" />
-                        Mapa
+                        Descubre el mapa
                     </button>
                 </Link>
                 <Link className="toRegistrarTitleZonaPets" to="/registrar">
-                    <button className="buttonTitleFromZonaPets">Regístrate</button>
+                    <button id="buttonTitleFromZonaPets2" className="buttonTitleFromZonaPets">Registrar</button>
                 </Link>
             </div>
         </div>

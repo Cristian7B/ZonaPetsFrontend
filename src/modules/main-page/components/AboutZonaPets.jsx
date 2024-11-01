@@ -43,12 +43,12 @@ export function AboutZonaPets() {
                         <img src={linkIcon} width="30px" alt="" />
                     </article>
                     <article className="anchordUrlFromNavZonaPets">
-                        <Link to="/login">Login</Link>
+                        <Link to="/iniciarsesion/login">Login</Link>
                         <img src={linkIcon} width="30px" alt="" />
                     </article>
                 </div>
                 <hr />
-                <Link to="/crear-cuenta"><button>Crear Cuenta</button></Link>
+                <Link to="/iniciarsesion/registrar"><button>Crear Cuenta</button></Link>
             </div>
             <div className="generalContainer">
                 <header className="headerFromZonaPets">
