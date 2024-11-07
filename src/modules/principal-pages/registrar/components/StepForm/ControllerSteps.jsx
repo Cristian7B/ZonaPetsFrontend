@@ -6,10 +6,34 @@ import { useGeolocation } from "../../hooks/useGeolocation";
 
 import { FirstStep } from "./FirstStep";
 import { SecondStep } from "./SecondStep";
+import { NavForSteps } from "./NavForSteps";
 
-
+import "../../Registrar.css";
+import { ProgressBar } from "./ProgressBar";
 export function ControllerSteps() {
     const [step, setStep] = useState(1);
+    const [valueStep, setValueStep] = useState(0);
+
+    useEffect(() => {
+        if (step === 1) {
+            setValueStep(33);
+        } else if (step === 2) {
+            setValueStep(66);
+        } else if (step === 3) {
+            setValueStep(100);
+        } else {
+            setValueStep(0);
+        }
+    }, [step]);
+
+    const handleStep = () => {
+        setStep(prevState => prevState + 1)
+    }
+
+    const handleBackStep = () => {
+        setStep(prevState => prevState - 1)
+    }
+
 
     const {objectLocation} = useGeolocation()
     const [formData, setFormData] = useState({
@@ -83,6 +107,7 @@ export function ControllerSteps() {
     return (
         <div className="containerAllFromStepRegister">
             <div className="containerFormStepRegister">
+                <NavForSteps/>
                 {step === 1 && (
                     <FirstStep
                         formData={formData}
@@ -99,6 +124,13 @@ export function ControllerSteps() {
                         setStep={setStep}
                     />
                 )}
+                <article className="bottomProgressAndButtons">
+                    <ProgressBar value={valueStep}/>
+                    <div className="buttonsForNextAndBack">
+                        <button className="buttonsForNextAndBack1" onClick={handleBackStep}>Atrás</button>
+                        <button className="buttonsForNextAndBack2" onClick={handleStep}>Siguiente</button>
+                    </div>
+                </article>
             </div>
         </div>
     )

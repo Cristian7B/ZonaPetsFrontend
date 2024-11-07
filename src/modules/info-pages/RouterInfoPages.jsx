@@ -20,6 +20,8 @@ import { FooterToolBar } from "../general/components/FooterToolBar";
 import { useWidth } from "../general/hooks/useWidth";
 import { ZonaPets } from "../main-page/components/ZonaPets";
 import { Politicas } from "./pages/politicasdeprivacidad/components/Politicas";
+import { FirstStep } from "../principal-pages/registrar/components/StepForm/FirstStep";
+import { ControllerSteps } from "../principal-pages/registrar/components/StepForm/ControllerSteps";
 
 export function RouterInfoPages() {
     const width = useWidth()
@@ -41,6 +43,7 @@ export function RouterInfoPages() {
                         <Route path="/afiliate" element={<Afiliate />} />
                         <Route path="/premium" element={<PremiumLanding />} />
                         <Route path="/contacto" element={<Contacto />} />
+                        <Route path="/registrar/steps" element={<ControllerSteps />} />
                         <Route path="/faq" element={<Faq />} />
                         <Route path="/iniciarsesion" element={<InicialLandingLogin />} />
                         <Route path="/iniciarsesion/login" element={<AccountLogin />} />

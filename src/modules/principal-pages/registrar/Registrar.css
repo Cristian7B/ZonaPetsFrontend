@@ -1,4 +1,4 @@
-.allContainer {
+/* .allContainer {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -126,4 +126,129 @@
         font-size: 40px;
         line-height: normal;
     }
+} */
+
+.navForSteps {
+    display: flex;
+    width: 100%;
+    padding: 53px 107px 0px 107px;
+    justify-content: space-between;
 }
+
+.containerButtonsFromNavSteps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.containerButtonsFromNavSteps a {
+    text-decoration: none;
+}
+
+.containerButtonsFromNavSteps button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 7px 14px;
+    border-radius: 30px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.containerButtonsFromNavSteps button:hover {
+    opacity: 0.8;
+}
+
+.containerButtonsFromNavSteps .buttonQuestionsSteps {
+    background-color: #F5F5F5;
+    border: 1px solid #AEADAD;
+    color: #1385F0;
+}
+
+.containerButtonsFromNavSteps .buttonSaveSteps {
+    background: #1385F0;
+    color: #F5F5F5;
+    border: 0;
+}
+
+.containerOfHeaderForPlace {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 20px 40px 20px;
+}
+
+.containerOfHeaderForPlace h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 100%;
+    color: #5E5E5E;
+    margin-bottom: 50px;
+}
+
+.containerCardsOfPlace {
+    display: grid;
+    width: 838px;
+    grid-template-columns: repeat(auto-fill, minmax(184px, 1fr));
+    gap: 34px;
+}
+
+.cardOfPlaceSteps {
+    width: 184px;
+    height: 154px;
+    border-radius: 10px;
+    background-color: #D9D9D9;
+}
+
+.progressGeneralBarContainer {
+    width: 100%;
+    padding: 0px 107px;
+}
+
+.progressBarForSteps {
+    width: 100%;
+}
+
+.containerFormStepRegister {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+.bottomProgressAndButtons {
+    margin-bottom: 20px;
+}
+
+.buttonsForNextAndBack {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 186px;
+}
+
+.buttonsForNextAndBack button {
+    padding: 12px;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+}
+
+.buttonsForNextAndBack .buttonsForNextAndBack1 {
+    background-color: #F5F5F5;
+    color: #1385F0;
+    text-decoration: underline;
+}
+
+.buttonsForNextAndBack .buttonsForNextAndBack2 {
+    background: #1385F0;
+    color: #F5F5F5;
+}
+
