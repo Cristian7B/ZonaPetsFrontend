@@ -22,6 +22,7 @@ import { ZonaPets } from "../main-page/components/ZonaPets";
 import { Politicas } from "./pages/politicasdeprivacidad/components/Politicas";
 import { FirstStep } from "../principal-pages/registrar/components/StepForm/FirstStep";
 import { ControllerSteps } from "../principal-pages/registrar/components/StepForm/ControllerSteps";
+import { Registrar } from "../principal-pages/registrar/components/Registrar";
 
 export function RouterInfoPages() {
     const width = useWidth()
@@ -44,6 +45,7 @@ export function RouterInfoPages() {
                         <Route path="/premium" element={<PremiumLanding />} />
                         <Route path="/contacto" element={<Contacto />} />
                         <Route path="/registrar/steps" element={<ControllerSteps />} />
+                        <Route path="/registrarview" element={<Registrar />} />
                         <Route path="/faq" element={<Faq />} />
                         <Route path="/iniciarsesion" element={<InicialLandingLogin />} />
                         <Route path="/iniciarsesion/login" element={<AccountLogin />} />

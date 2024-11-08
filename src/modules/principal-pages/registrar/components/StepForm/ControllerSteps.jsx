@@ -118,10 +118,7 @@ export function ControllerSteps() {
                 )}
                 {step === 2 && (
                     <SecondStep
-                        formData={formData}
-                        handleChange={handleChange}
-                        handleSubmit={handleSubmit}
-                        setStep={setStep}
+                        handleLocationChange={handleLocationChange}
                     />
                 )}
                 <article className="bottomProgressAndButtons">

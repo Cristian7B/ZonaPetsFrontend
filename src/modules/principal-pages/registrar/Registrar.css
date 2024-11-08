@@ -1,21 +1,51 @@
-/* .allContainer {
+.allContainer {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 50px;
+    padding: 50px 50px 80px 50px;
 }
 
 .containerFormAll {
+    /* display: flex;
+     */
     display: grid;
-    grid-template-columns: 2fr 4fr;
+    grid-template-columns: 2fr 3fr;
+    justify-content: center;
     align-items: center;
-    border: 2px solid #80808052;
+    border: 2px solid 1px solid #AEADAD;
     border-radius: 10px;
-    padding: 40px;
+    /* padding: 40px; */
+    width: 1050px;
+    /* gap: 50px; */
+}
+
+.containerFormAll article {
     width: 100%;
-    gap: 50px;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #1385F0;
+    border-radius: 10px 0px 0px 10px;
+    color: #fff;
+    gap: 10px;
+}
+
+.containerFormAll article h1 {
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.containerFormAll article p {
+    font-family: "Rethink sans";
+    font-size: 20px;
+}
+
+.containerFormAll article img {
+    transform: rotate(-20deg);
 }
 
 .contentForm h1 {
@@ -94,9 +124,10 @@
 }
 
 #mapRegister {
-    height: 100%;
-    border-radius: 10px;
+    height: 500px;
+    border-radius: 0px 10px 10px 0px;
     border: 1px solid #80808052;
+    /* width: 800px; */
 }
 
 .toastSuccesRender, .toastErrorRender {
@@ -126,7 +157,7 @@
         font-size: 40px;
         line-height: normal;
     }
-} */
+}
 
 .navForSteps {
     display: flex;
