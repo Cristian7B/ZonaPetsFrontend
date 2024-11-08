@@ -1,4 +1,10 @@
-export function FirstStep() {
+import { useState } from "react";
+import { dataTypePlace } from "../../utils/consts";
+import { CardTypePlace } from "./CardTypePlace";
+
+export function FirstStep({setFormData}) {
+    const [controllerSelect, setControllerSelect] = useState(null)
+    console.log(controllerSelect)
     return (
         <>
             <section className="containerOfHeaderForPlace">
@@ -6,30 +12,19 @@ export function FirstStep() {
                     ¿Qué tipo de lugar quieres registrar?
                 </h1>
                 <div className="containerCardsOfPlace">
-                    <article className="cardOfPlaceSteps">
-
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
-                    <article className="cardOfPlaceSteps">
-                        
-                    </article>
+                    {
+                        dataTypePlace.map((item, index) => (
+                            <CardTypePlace
+                                key={index}
+                                controllerSelect={controllerSelect}
+                                controllerSelectChange={(value) => setControllerSelect(value)}
+                                setFormData={setFormData}
+                                index={index}
+                                name={item.name}
+                                icon={item.icon}
+                            />
+                        ))
+                    }
                 </div>
             </section>
         </>

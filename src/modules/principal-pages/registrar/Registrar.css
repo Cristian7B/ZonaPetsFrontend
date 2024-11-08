@@ -202,6 +202,33 @@
     height: 154px;
     border-radius: 10px;
     background-color: #D9D9D9;
+    transition: all ease 0.2s;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-wrap: balance;
+    padding: 20px;
+    text-align: center;
+    gap: 10px;
+}
+
+.cardOfPlaceSteps p {
+    font-style: normal;
+    font-weight: 600;
+    color: #5E5E5E;
+    font-family: "Rethink sans";
+}
+
+.cardOfPlaceSteps:hover {
+    opacity: 0.8;
+}
+
+.cardOfPlaceSteps.selected {
+    border: 2px solid #b1b0b0;
+    background: #7fbfffab;
 }
 
 .progressGeneralBarContainer {
@@ -242,7 +269,6 @@
 }
 
 .buttonsForNextAndBack .buttonsForNextAndBack1 {
-    background-color: #F5F5F5;
     color: #1385F0;
     text-decoration: underline;
 }
@@ -252,3 +278,8 @@
     color: #F5F5F5;
 }
 
+.toastWarningRender {
+    background-color: #f0ad4e !important; /* Color de fondo para el estado de carga */
+    color: #fff !important; 
+    border: 0 !important;
+}

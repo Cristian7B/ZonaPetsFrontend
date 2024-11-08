@@ -1,5 +1,5 @@
 import axios from "axios";
-import { toast } from "sonner";
+import { toast, Toaster } from "sonner";
 
 import { useEffect, useState } from "react";
 import { useGeolocation } from "../../hooks/useGeolocation";
@@ -44,6 +44,8 @@ export function ControllerSteps() {
         correo_electronico: null,
         telefono_usuario: '',
     });
+
+    console.log(formData)
 
     useEffect(() => {
         setFormData(prevState => ({
@@ -106,14 +108,12 @@ export function ControllerSteps() {
 
     return (
         <div className="containerAllFromStepRegister">
+            <Toaster richColors expand={true}/>
             <div className="containerFormStepRegister">
                 <NavForSteps/>
                 {step === 1 && (
                     <FirstStep
-                        formData={formData}
-                        handleChange={handleChange}
-                        handleLocationChange={handleLocationChange}
-                        setStep={setStep}
+                        setFormData={setFormData}
                     />
                 )}
                 {step === 2 && (
