@@ -228,6 +228,14 @@
     gap: 34px;
 }
 
+.containerCardsOfPlaceRegistry {
+    display: flex;
+    width: 838px;
+    gap: 34px;
+    align-items: center;
+    justify-content: center;
+}
+
 .cardOfPlaceSteps {
     width: 184px;
     height: 154px;
@@ -246,6 +254,28 @@
     gap: 10px;
 }
 
+.cardOfPlaceStepsTypeRegistry {
+    border-radius: 10px;
+    background-color: #D9D9D9;
+    transition: all ease 0.2s;
+    border: 1px solid #D9D9D9;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-wrap: balance;
+    padding: 20px;
+    text-align: center;
+    gap: 10px;
+    font-style: normal;
+    font-weight: 500;
+    color: #5E5E5E;
+    font-family: "Rethink sans";
+    width: 250px;
+    height: 250px;
+}
+
 .cardOfPlaceSteps p {
     font-style: normal;
     font-weight: 600;
@@ -253,13 +283,21 @@
     font-family: "Rethink sans";
 }
 
-.cardOfPlaceSteps:hover {
+.cardOfPlaceSteps:hover, .cardOfPlaceStepsTypeRegistry:hover {
     opacity: 0.8;
 }
 
-.cardOfPlaceSteps.selected {
+.cardOfPlaceSteps.selected, .cardOfPlaceStepsTypeRegistry.selected {
     border: 2px solid #b1b0b0;
     background: #7fbfffab;
+}
+
+.cardOfPlaceSteps img {
+    width: 50px;
+}
+
+.cardOfPlaceStepsTypeRegistry img {
+    width: 90px;
 }
 
 .progressGeneralBarContainer {

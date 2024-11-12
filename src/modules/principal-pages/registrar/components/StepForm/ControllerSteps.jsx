@@ -10,16 +10,21 @@ import { NavForSteps } from "./NavForSteps";
 
 import "../../Registrar.css";
 import { ProgressBar } from "./ProgressBar";
+import { ThirdStep } from "./ThirdStep";
+import { FourthStep } from "./FourthStep";
 export function ControllerSteps() {
     const [step, setStep] = useState(1);
     const [valueStep, setValueStep] = useState(0);
+    const [dataTypeRegistry, setDataTypeRegistry] = useState(null);
 
     useEffect(() => {
         if (step === 1) {
-            setValueStep(33);
+            setValueStep(25);
         } else if (step === 2) {
-            setValueStep(66);
+            setValueStep(50);
         } else if (step === 3) {
+            setValueStep(75);
+        } else if (step === 4) {
             setValueStep(100);
         } else {
             setValueStep(0);
@@ -121,6 +126,20 @@ export function ControllerSteps() {
                         handleLocationChange={handleLocationChange}
                     />
                 )}
+                {step === 3 && (
+                    <ThirdStep
+                        setFormData={setFormData}
+                        setDataTypeRegistry={(nameRegistry) => setDataTypeRegistry(nameRegistry)}
+                    />
+                )}
+                {
+                    step === 4 && (
+                        <FourthStep 
+                            dataTypeRegistry={dataTypeRegistry}
+                            setFormData={setFormData}
+                        />
+                    )
+                }
                 <article className="bottomProgressAndButtons">
                     <ProgressBar value={valueStep}/>
                     <div className="buttonsForNextAndBack">

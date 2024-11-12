@@ -22,6 +22,9 @@ export function FirstStep({setFormData}) {
                                 index={index}
                                 name={item.name}
                                 icon={item.icon}
+                                className={item.className}
+                                tipoSelect={"lugar"}
+                                elementToChange={"tipo_de_negocio"}
                             />
                         ))
                     }

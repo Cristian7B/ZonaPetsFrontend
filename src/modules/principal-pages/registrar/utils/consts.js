@@ -10,36 +10,58 @@ import addIcon from "../static/assets/add-outline.svg"
 export const dataTypePlace = [
     {
         name: "Hoteles",
-        icon: hotelIcon
+        icon: hotelIcon,
+        className: "",
     },
     {
         name: "Restaurante",
-        icon: restaurantIcon
+        icon: restaurantIcon,
+        className: "",
     },
     {
         name: "Parque Para Mascotas",
-        icon: parkIcon
+        icon: parkIcon,
+        className: "",
     },
     {
         name: "Centro Comercial",
-        icon: mallIcon
+        icon: mallIcon,
+        className: "",
     },
     {
         name: "Tienda de Mascotas",
-        icon: storeIcon
+        icon: storeIcon,
+        className: "",
     },
     {
         name: "Sitios Turísticos",
-        icon: planeIcon
+        icon: planeIcon,
+        className: "",
     },
     {
         name: "Servicio De Paseo",
-        icon: paseoIcon
+        icon: paseoIcon,
+        className: "",
     },
     {
         name: "Otros",
-        icon: addIcon
+        icon: addIcon,
+        className: "",
     },
 ];
 
+import personIcon from "../static/assets/walk-outline.svg"
+import businessIcon from "../static/assets/storefront-outline2.svg"
 
+export const dataTypeRegistry = [
+    {
+        tipo: "Propietario del lugar",
+        icon: businessIcon,
+        className: "TypeRegistry"
+    },
+    {
+        tipo: "Visitante del lugar",
+        icon: personIcon,
+        className: "TypeRegistry"
+    }
+]   
