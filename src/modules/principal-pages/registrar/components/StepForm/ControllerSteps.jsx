@@ -12,6 +12,8 @@ import "../../Registrar.css";
 import { ProgressBar } from "./ProgressBar";
 import { ThirdStep } from "./ThirdStep";
 import { FourthStep } from "./FourthStep";
+import { LoadScript } from "@react-google-maps/api";
+import { Registrar } from "../Registrar";
 export function ControllerSteps() {
     const [step, setStep] = useState(1);
     const [valueStep, setValueStep] = useState(0);
@@ -40,7 +42,7 @@ export function ControllerSteps() {
     }
 
 
-    const {objectLocation} = useGeolocation()
+    const {objectLocation, setObjectLocation, setUserLocation, userLocation} = useGeolocation()
     const [formData, setFormData] = useState({
         nombre_compañia: '',
         latitud: objectLocation.lat,
@@ -49,7 +51,7 @@ export function ControllerSteps() {
         correo_electronico: null,
         telefono_usuario: '',
     });
-
+    console.log(userLocation)
     console.log(formData)
 
     useEffect(() => {
@@ -112,42 +114,54 @@ export function ControllerSteps() {
     }
 
     return (
-        <div className="containerAllFromStepRegister">
-            <Toaster richColors expand={true}/>
-            <div className="containerFormStepRegister">
-                <NavForSteps/>
-                {step === 1 && (
-                    <FirstStep
-                        setFormData={setFormData}
+        <LoadScript
+            googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_KEY}
+        >
+            <div className="containerAllFromStepRegister">
+                <Toaster richColors expand={true}/>
+                <div className="containerFormStepRegister">
+                    <NavForSteps 
+                        handleSubmit={handleSubmit}
                     />
-                )}
-                {step === 2 && (
-                    <SecondStep
-                        handleLocationChange={handleLocationChange}
-                    />
-                )}
-                {step === 3 && (
-                    <ThirdStep
-                        setFormData={setFormData}
-                        setDataTypeRegistry={(nameRegistry) => setDataTypeRegistry(nameRegistry)}
-                    />
-                )}
-                {
-                    step === 4 && (
-                        <FourthStep 
-                            dataTypeRegistry={dataTypeRegistry}
+                    {step === 1 && (
+                        <FirstStep
                             setFormData={setFormData}
                         />
-                    )
-                }
-                <article className="bottomProgressAndButtons">
-                    <ProgressBar value={valueStep}/>
-                    <div className="buttonsForNextAndBack">
-                        <button className="buttonsForNextAndBack1" onClick={handleBackStep}>Atrás</button>
-                        <button className="buttonsForNextAndBack2" onClick={handleStep}>Siguiente</button>
-                    </div>
-                </article>
+                    )}
+                    {step === 2 && (
+                        <Registrar
+                            handleLocationChange={handleLocationChange}
+                            userLocation={userLocation}
+                            setUserLocation={setUserLocation}
+                            setObjectLocation={setObjectLocation}
+                            objectLocation={objectLocation}
+                        />
+                    )}
+                    {step === 3 && (
+                        <ThirdStep
+                            setFormData={setFormData}
+                            setDataTypeRegistry={(nameRegistry) => setDataTypeRegistry(nameRegistry)}
+                        />
+                    )}
+                    {
+                        step === 4 && (
+                            <FourthStep 
+                                dataTypeRegistry={dataTypeRegistry}
+                                setFormData={setFormData}
+                                handleSubmit={handleSubmit}
+                                formData={formData}
+                            />
+                        )
+                    }
+                    <article className="bottomProgressAndButtons">
+                        <ProgressBar value={valueStep}/>
+                        <div className="buttonsForNextAndBack">
+                            <button className="buttonsForNextAndBack1" onClick={handleBackStep}>Atrás</button>
+                            <button className="buttonsForNextAndBack2" onClick={handleStep}>Siguiente</button>
+                        </div>
+                    </article>
+                </div>
             </div>
-        </div>
+        </LoadScript>
     )
 }

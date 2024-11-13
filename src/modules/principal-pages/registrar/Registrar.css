@@ -3,7 +3,6 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     padding: 50px 50px 80px 50px;
 }
 
@@ -228,12 +227,16 @@
     gap: 34px;
 }
 
-.containerCardsOfPlaceRegistry {
+.containerCardsOfPlaceRegistry, .containerCardsOfPlaceRegistryForm {
     display: flex;
     width: 838px;
     gap: 34px;
     align-items: center;
     justify-content: center;
+}
+
+.containerCardsOfPlaceRegistryForm {
+    width: 600px;
 }
 
 .cardOfPlaceSteps {
@@ -274,6 +277,7 @@
     font-family: "Rethink sans";
     width: 250px;
     height: 250px;
+
 }
 
 .cardOfPlaceSteps p {
@@ -352,3 +356,48 @@
     color: #fff !important; 
     border: 0 !important;
 }
+
+.formForRegisterUser {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+    border: 1px solid #80808052;
+    border-radius: 20px;
+    gap: 25px;
+}
+
+.formForRegisterUser article {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.formForRegisterUser article label {
+    font-family: "Rethink sans";
+    font-size: 25px;
+    color: #1385f0;
+}
+
+.formForRegisterUser article input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #80808052;
+    font-family: "Rethink sans";
+    font-size: 20px;
+    outline: 0;
+    color: #5E5E5E;
+    transition: all ease 0.2s;
+}
+
+.formForRegisterUser article input:focus {
+    border: 1px solid #1385f04d;
+}
+
+.formForRegisterUser article input::placeholder {
+    font-family: "Rethink sans";
+    font-size: 20px;
+    color: #80808052;
+}
+
+

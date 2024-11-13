@@ -1,9 +1,9 @@
 import { Registrar } from "../Registrar";
 
-export function SecondStep({handleLocationChange}) {
+export function SecondStep({handleLocationChange, userLocation, setUserLocation, setObjectLocation}) {
     return (
-        <Registrar
-            onLocationChange={handleLocationChange}
-        />
+            <Registrar
+                onLocationChange={handleLocationChange}
+            />
     )
 }

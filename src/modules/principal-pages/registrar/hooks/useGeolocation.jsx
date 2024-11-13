@@ -13,8 +13,8 @@ export function useGeolocation() {
             return;
         }
 
-        const watchId = navigator.geolocation.watchPosition(
-            (position) => {
+        const loadPosition = (position) => {
+            if (window.google && window.google.maps) {
                 const userLatLng = new window.google.maps.LatLng(
                     position.coords.latitude,
                     position.coords.longitude
@@ -25,7 +25,14 @@ export function useGeolocation() {
                     lng: position.coords.longitude,
                 });
                 setLoading(false);
-            },
+            } else {
+                setError("La API de Google Maps no está cargada.");
+                setLoading(false);
+            }
+        };
+
+        const watchId = navigator.geolocation.watchPosition(
+            loadPosition,
             (err) => {
                 setError(`Error obteniendo la ubicación: ${err.message}`);
                 setLoading(false);

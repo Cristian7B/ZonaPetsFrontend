@@ -1,7 +1,7 @@
 import logoSvg from "../../static/assets/logo.svg";
 
 import "../../Registrar.css"
-export function NavForSteps() {
+export function NavForSteps({handleSubmit}) {
     return (
         <nav className="navForSteps">
             <article className="containerLogoFromNavSteps">
@@ -14,7 +14,7 @@ export function NavForSteps() {
                     </button>
                 </a>
                 <a href="">
-                    <button className="buttonSaveSteps">
+                    <button onClick={handleSubmit} className="buttonSaveSteps">
                         Guardar y salir
                     </button>
                 </a>
