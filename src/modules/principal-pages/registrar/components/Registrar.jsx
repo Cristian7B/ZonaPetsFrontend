@@ -1,7 +1,6 @@
 import { GoogleMap } from "@react-google-maps/api";
 import { center } from "../../mapa/consts";
 import { useEffect, useRef, useState } from "react";
-import { useGeolocation } from "../hooks/useGeolocation";
 import userMarkerIcon from "../../mapa/static/assets/markerUser.png";
 import pinIcon from "../static/assets/pin-outline.svg";
 import "../Registrar.css";

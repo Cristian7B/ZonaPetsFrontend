@@ -31,11 +31,11 @@ export function RouterInfoPages() {
         <>
             <DataUserProvider>
                 <Router>
-                    {
+                    {/* {
                         width < 600 ? (
                             <FooterToolBar/>
                         ) : null
-                    }
+                    } */}
                     <Routes>
                         <Route path="/" element={<ZonaPets/>}/>
                         <Route path="/acercade" element={<AcercaDe />} />

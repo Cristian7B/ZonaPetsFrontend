@@ -1,5 +1,5 @@
 import logoSvg from "../../static/assets/logo.svg";
-
+import questionIcon from "../../static/assets/help-outline.svg"
 import "../../Registrar.css"
 export function NavForSteps({handleSubmit}) {
     return (
@@ -12,6 +12,9 @@ export function NavForSteps({handleSubmit}) {
                     <button className="buttonQuestionsSteps">
                         ¿Preguntas?
                     </button>
+                </a>
+                <a href="" className="buttonQuestionsStepsResponsive">  
+                    <img src={questionIcon} width="20px" alt="" />
                 </a>
                 <a href="">
                     <button onClick={handleSubmit} className="buttonSaveSteps">

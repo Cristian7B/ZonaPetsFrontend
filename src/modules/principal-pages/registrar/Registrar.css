@@ -343,6 +343,7 @@
 
 .buttonsForNextAndBack .buttonsForNextAndBack1 {
     color: #1385F0;
+    background: #ffffff00;
     text-decoration: underline;
 }
 
@@ -352,7 +353,7 @@
 }
 
 .toastWarningRender {
-    background-color: #f0ad4e !important; /* Color de fondo para el estado de carga */
+    background-color: #f0ad4e !important;
     color: #fff !important; 
     border: 0 !important;
 }
@@ -400,4 +401,142 @@
     color: #80808052;
 }
 
+.buttonQuestionsStepsResponsive {
+    display: none;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #80808052;
+    border-radius: 40px;
+}
+
+.provisionaDivResponsiveSteps {
+    display: none;
+}
+
+
+@media(width <= 1058px) {
+    .containerOfHeaderForPlace h1 {
+        text-align: center;
+        font-size: 45px;
+    }
+}
+
+@media(width <= 838px) {
+    .containerCardsOfPlace {
+        width: 100%;
+        padding: 0px 20px;
+        margin-bottom: 30px;
+    }
+
+    .containerCardsOfPlaceRegistry, .containerCardsOfPlaceRegistryForm {
+        width: 100%;
+        padding: 0px 20px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cardOfPlaceSteps {
+        width: 100%;
+    }
+
+    .cardOfPlaceStepsTypeRegistry {
+        width: 100%;
+    }
+
+    .containerOfHeaderForPlace {
+        padding: 20px;
+        margin-bottom: 30px;
+    }
+
+    .containerFormAll {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navForSteps {
+        padding: 20px;
+    }
+
+    .progressGeneralBarContainer {
+        padding: 0px 20px;
+    }
+
+    .buttonsForNextAndBack {
+        padding: 20px;
+    }
+
+    .formForRegisterUser {
+        padding: 20px;
+    }
+
+    .containerOfHeaderForPlace h1 {
+        margin-bottom: 30px;
+    }
+}
+
+@media(width <= 500px) {
+    .containerOfHeaderForPlace h1 {
+        font-size: 35px;
+    }
+
+    .buttonQuestionsSteps {
+        display: none;
+    }
+
+    .buttonQuestionsStepsResponsive {
+        display: flex;
+    }
+
+    .bottomProgressAndButtons {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        margin: 0;
+        background: #b9b9b952;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #0000001a;
+    backdrop-filter: blur(15.6px);
+    }
+
+    .progressGeneralBarContainer {
+        display: none;
+    }
+
+    .containerOfHeaderForPlace {
+        padding: 20px 20px 89px 20px;
+    }
+
+    .provisionaDivResponsiveSteps {
+        display: block;
+    }
+
+}
+
+@media(width <= 400px) {
+    .containerOfHeaderForPlace h1 {
+        font-size: 30px;
+    }
+
+    .containerButtonsFromNavSteps button {
+        font-size: 16px;
+    }
+
+    .containerButtonsFromNavSteps {
+        gap: 8px;
+    }
+
+    .formForRegisterUser article label {
+        font-size: 20px;
+    }
+
+    .formForRegisterUser article input {
+        font-size: 16px;
+    }
+
+    .formForRegisterUser article input::placeholder {
+        font-size: 16px;
+    }
+}
 

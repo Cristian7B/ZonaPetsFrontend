@@ -1,36 +1,30 @@
 import axios from "axios";
 import { toast, Toaster } from "sonner";
-
-import { useEffect, useState } from "react";
 import { useGeolocation } from "../../hooks/useGeolocation";
+import { useEffect, useState } from "react";
 
 import { FirstStep } from "./FirstStep";
-import { SecondStep } from "./SecondStep";
 import { NavForSteps } from "./NavForSteps";
-
-import "../../Registrar.css";
 import { ProgressBar } from "./ProgressBar";
 import { ThirdStep } from "./ThirdStep";
 import { FourthStep } from "./FourthStep";
 import { LoadScript } from "@react-google-maps/api";
 import { Registrar } from "../Registrar";
+
+
+
+import "../../Registrar.css";
+
 export function ControllerSteps() {
     const [step, setStep] = useState(1);
     const [valueStep, setValueStep] = useState(0);
     const [dataTypeRegistry, setDataTypeRegistry] = useState(null);
+    
+    const {objectLocation, setObjectLocation, setUserLocation, userLocation} = useGeolocation()
+
 
     useEffect(() => {
-        if (step === 1) {
-            setValueStep(25);
-        } else if (step === 2) {
-            setValueStep(50);
-        } else if (step === 3) {
-            setValueStep(75);
-        } else if (step === 4) {
-            setValueStep(100);
-        } else {
-            setValueStep(0);
-        }
+        setValueStep(step * 25)
     }, [step]);
 
     const handleStep = () => {
@@ -38,11 +32,10 @@ export function ControllerSteps() {
     }
 
     const handleBackStep = () => {
+        if(step === 1) return;
         setStep(prevState => prevState - 1)
     }
 
-
-    const {objectLocation, setObjectLocation, setUserLocation, userLocation} = useGeolocation()
     const [formData, setFormData] = useState({
         nombre_compañia: '',
         latitud: objectLocation.lat,
@@ -51,8 +44,6 @@ export function ControllerSteps() {
         correo_electronico: null,
         telefono_usuario: '',
     });
-    console.log(userLocation)
-    console.log(formData)
 
     useEffect(() => {
         setFormData(prevState => ({
@@ -62,21 +53,13 @@ export function ControllerSteps() {
         }))
     },[objectLocation])
     
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
-
     const handleLocationChange = (newLocation) => {
         setFormData(prevState => ({
             ...prevState,
             latitud: newLocation.lat,
             longitud: newLocation.lng
         }));
-    };
+    };  
 
 
     const handleSubmit = (e) => {
@@ -160,6 +143,7 @@ export function ControllerSteps() {
                             <button className="buttonsForNextAndBack2" onClick={handleStep}>Siguiente</button>
                         </div>
                     </article>
+                    <div className="provisionaDivResponsiveSteps"></div>
                 </div>
             </div>
         </LoadScript>
