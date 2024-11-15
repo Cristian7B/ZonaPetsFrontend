@@ -12,7 +12,6 @@ export const useRegister = () => {
         foto: ""
     });
     const [dataLogin, setDataLogin] = useState()
-    console.log(dataRegister)
 
     const { loginUser, registerUser, stateRegister } = useAuth();
 
@@ -44,7 +43,6 @@ export const useRegister = () => {
     };
     const handleLogin = async () => {
         if (stateRegister) {
-            console.log(dataRegister.email)
             try {
                 await toast.promise(loginUser({
                     email: dataLogin.email,

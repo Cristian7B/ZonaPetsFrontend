@@ -2,13 +2,15 @@ import { useEffect, useState } from "react"
 import { dataTypeRegistry } from "../../utils/consts"
 import { CardTypePlaceRegistry } from "./CardTypePlaceRegistry"
 
-export function ThirdStep({setDataTypeRegistry}) { 
+export function ThirdStep({setDataTypeRegistry, setAuthOptions}) { 
     const [controllerSelect, setControllerSelect] = useState(null)
     useEffect(() => {
         if(controllerSelect !== null) {
             setDataTypeRegistry(dataTypeRegistry[controllerSelect].tipo)
+            setAuthOptions(true)
         } else {
             setDataTypeRegistry("")
+            setAuthOptions(false)
         }
     }, [controllerSelect])
     return (

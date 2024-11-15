@@ -83,6 +83,7 @@ export function InicialLandingLogin() {
         toast.promise(sendData, {
             loading: 'Cambiando la información...',
             success: '¡Completado!',
+            
             className: "loading-toast"
         });
     };

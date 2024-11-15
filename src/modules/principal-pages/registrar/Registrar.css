@@ -129,7 +129,7 @@
     /* width: 800px; */
 }
 
-.toastSuccesRender, .toastErrorRender {
+.toastSuccesRender, .toastErrorRender, [data-type="success"] {
     font-size: 15px;
     background-color: hsl(140, 86%, 33%) !important;
     color: #FFFFFF !important;
@@ -137,16 +137,17 @@
     border: 0;
 }
 
-.toastErrorRender {
+.toastErrorRender, [data-type="error"] {
     background-color: #f13232 !important;
+    color: #fff !important;
 }
-
+/* 
 @media(max-width: 1082px) {
     .containerFormAll {
         grid-template-columns: 1fr;
         grid-template-rows: 2fr 1fr;
     }
-}
+} */
 
 @media(max-width: 470px) {
     .containerFormAll {
@@ -352,6 +353,10 @@
     color: #F5F5F5;
 }
 
+.buttonsForSaveSteps {
+    background-color: (140, 86%, 33%)
+}
+
 .toastWarningRender {
     background-color: #f0ad4e !important;
     color: #fff !important; 
@@ -451,7 +456,7 @@
 
     .containerFormAll {
         width: 100%;
-        padding: 20px;
+        padding: 0px;
     }
 
     .navForSteps {
@@ -475,6 +480,30 @@
     }
 }
 
+@media(width <= 700px) {
+    .allContainer {
+        padding: 20px;
+    }
+
+    .containerFormAll {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #mapRegister {
+        width: 100%;
+    }
+
+    .containerFormAll article {
+        background-color: #fff;
+        color: #5E5E5E;
+    }
+
+    .containerFormAll article img{
+        display: none;
+    }
+}
+
 @media(width <= 500px) {
     .containerOfHeaderForPlace h1 {
         font-size: 35px;
@@ -495,9 +524,9 @@
         background: #fff;
         margin: 0;
         background: #b9b9b952;
-    border-radius: 16px;
-    box-shadow: 0 4px 30px #0000001a;
-    backdrop-filter: blur(15.6px);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px #0000001a;
+        backdrop-filter: blur(15.6px);
     }
 
     .progressGeneralBarContainer {
@@ -510,6 +539,23 @@
 
     .provisionaDivResponsiveSteps {
         display: block;
+    }
+
+    .containerFormAll article h1 {
+        font-size: 30px;
+        line-height: 14px;
+        text-wrap: balance;
+    }
+
+    .allContainer {
+        height: 900px;
+        padding: 20px 20px 89px 20px;
+        align-items: start;
+    }
+
+    .containerFormAll article{
+        padding: 0px;
+        margin-bottom: 20px;
     }
 
 }
@@ -540,3 +586,9 @@
     }
 }
 
+
+@media(width <= 478px) {
+    .containerFormAll article h1 {
+        line-height: 30px;
+    }
+}

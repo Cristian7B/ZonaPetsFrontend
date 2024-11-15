@@ -17,7 +17,6 @@ export function AccountRegister() {
     const {handleLogin, handleRegister, handleDataOfRegister} = useRegister()
     const { errorRegister, error, dataUser } = useAuth()
     const {stateRegister, setStateRegister} = useContext(DataUserContext)
-    console.log(stateRegister)
     useEffect(() => {
         if (stateRegister) {
             handleLogin();

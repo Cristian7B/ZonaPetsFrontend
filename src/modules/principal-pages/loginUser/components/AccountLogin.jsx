@@ -44,9 +44,6 @@ export function AccountLogin() {
         });
     }
 
-    useEffect(() => {
-        console.log(dataUser)
-    }, [dataUser])
     return (
         <>
             <GoogleOAuthProvider clientId="662936439332-at27tnvnji933e25o8s4ioqm2o80fgbp.apps.googleusercontent.com">

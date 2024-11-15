@@ -5,17 +5,13 @@ import userMarkerIcon from "../../mapa/static/assets/markerUser.png";
 import pinIcon from "../static/assets/pin-outline.svg";
 import "../Registrar.css";
 
-export function Registrar({ onLocationChange, userLocation, setUserLocation, setObjectLocation, objectLocation }) {
+export function Registrar({ onLocationChange, userLocation, setUserLocation, setObjectLocation, objectLocation, setAuthOptions }) {
     const mapRef = useRef(null);
     const [mapLoaded, setMapLoaded] = useState(false);
     const markerUserRef = useRef(null);
 
-    console.log(userLocation);
-    console.log(objectLocation)
-
     useEffect(() => {
         if (userLocation && mapLoaded && mapRef.current) {
-            console.log("IASDFNA")
             const userLatLng = new window.google.maps.LatLng(
                 objectLocation.lat,
                 objectLocation.lng
@@ -47,6 +43,7 @@ export function Registrar({ onLocationChange, userLocation, setUserLocation, set
 
             mapRef.current.setCenter(userLocation);
             mapRef.current.setZoom(14);
+            setAuthOptions(true)
         }
     }, [mapLoaded, userLocation, mapRef.current]);
 

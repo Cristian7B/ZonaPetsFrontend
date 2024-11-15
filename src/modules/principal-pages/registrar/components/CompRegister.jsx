@@ -1,4 +1,11 @@
-export function CompRegister({formData, setFormData}) {
+import { useEffect } from "react";
+
+export function CompRegister({formData, setFormData, setControllerInput}) {    
+
+    useEffect(() => {
+        setControllerInput((Object.entries(formData).filter(([key, value]) => String(value).trim() === "")).length)
+    }, [formData]);
+
 
     const handleChange = (e) => {
         setFormData({

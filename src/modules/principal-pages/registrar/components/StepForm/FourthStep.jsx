@@ -1,7 +1,7 @@
 import { CompRegister } from "../CompRegister";
 import { UserRegister } from "../UserRegister";
 
-export function FourthStep({setFormData, dataTypeRegistry, formData, handleSubmit}) {
+export function FourthStep({setFormData, dataTypeRegistry, formData, setControllerInput}) {
     return (
         <>
         {
@@ -10,6 +10,7 @@ export function FourthStep({setFormData, dataTypeRegistry, formData, handleSubmi
                     <CompRegister
                         setFormData={setFormData}
                         formData={formData}
+                        setControllerInput={setControllerInput}
                     />
                 </>
             ):(
@@ -17,6 +18,7 @@ export function FourthStep({setFormData, dataTypeRegistry, formData, handleSubmi
                     <UserRegister
                         setFormData={setFormData}
                         formData={formData}
+                        setControllerInput={setControllerInput}
                     />
                 </>
             )

@@ -1,4 +1,10 @@
-export function UserRegister({formData, setFormData}) {
+import { useEffect } from "react";
+
+export function UserRegister({formData, setFormData, setControllerInput}) {
+    
+    useEffect(() => {
+        setControllerInput((Object.entries(formData).filter(([key, value]) => String(value).trim() === "")).length - 1)
+    }, [formData]);
 
     const handleChange = (e) => {
         setFormData({

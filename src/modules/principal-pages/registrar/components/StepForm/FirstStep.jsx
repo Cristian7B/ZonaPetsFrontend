@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { dataTypePlace } from "../../utils/consts";
 import { CardTypePlace } from "./CardTypePlace";
 
-export function FirstStep({setFormData}) {
+export function FirstStep({setFormData, setAuthOptions}) {
     const [controllerSelect, setControllerSelect] = useState(null)
-    console.log(controllerSelect)
+    
+    useEffect(() => {
+        if(controllerSelect !== null) {
+            setAuthOptions(true)
+        } else {
+            setAuthOptions(false)
+        }
+
+    }, [controllerSelect])
     return (
         <>
             <section className="containerOfHeaderForPlace">
