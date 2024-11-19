@@ -19,8 +19,6 @@ import { InfoPlace } from "./InfoPlace";
 import { PrincipalNav } from "../../../general/components/PrincipalNav";
 import { Loader } from "../../loginUser/components/Loader";
 
-const libraries = ['geometry'];
-
 export function Mapa() {
     const [sendData, setSendData] = useState(false);
     const mapRef = useRef(null);
@@ -135,10 +133,6 @@ export function Mapa() {
             )
         }
             <PrincipalNav/>
-            <LoadScript 
-                googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_KEY}
-                libraries={libraries}    
-            >
                 <div ref={refOverlay} id="overlay"></div>
                 <div className="container-all" id="move-content">
                     <div style={{ display: "none" }}>
@@ -198,7 +192,6 @@ export function Mapa() {
                         </div>
                     </div>
                 </div>
-            </LoadScript>
         </>
     );
 }

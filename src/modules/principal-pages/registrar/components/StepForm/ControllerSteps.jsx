@@ -3,13 +3,12 @@ import { toast, Toaster } from "sonner";
 import { useGeolocation } from "../../hooks/useGeolocation";
 import { useEffect, useState } from "react";
 
-import { FirstStep } from "./FirstStep";
 import { NavForSteps } from "./NavForSteps";
-import { ProgressBar } from "./ProgressBar";
+import { FirstStep } from "./FirstStep";
+import { SecondStep } from "./SecondStep";
 import { ThirdStep } from "./ThirdStep";
 import { FourthStep } from "./FourthStep";
-import { LoadScript } from "@react-google-maps/api";
-import { Registrar } from "../Registrar";
+import { ProgressBar } from "./ProgressBar";
 
 import "../../Registrar.css";
 
@@ -122,9 +121,6 @@ export function ControllerSteps() {
     };
 
     return (
-        <LoadScript
-            googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_KEY}
-        >
             <div className="containerAllFromStepRegister">
                 <Toaster richColors expand={true}/>
                 <div className="containerFormStepRegister">
@@ -136,7 +132,7 @@ export function ControllerSteps() {
                         />
                     )}
                     {step === 2 && (
-                        <Registrar
+                        <SecondStep
                             userLocation={userLocation}
                             setUserLocation={setUserLocation}
                             setObjectLocation={setObjectLocation}
@@ -175,6 +171,5 @@ export function ControllerSteps() {
                     <div className="provisionaDivResponsiveSteps"></div>
                 </div>
             </div>
-        </LoadScript>
     )
 }

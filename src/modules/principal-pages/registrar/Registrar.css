@@ -492,6 +492,7 @@
 
     #mapRegister {
         width: 100%;
+        border-radius: 10px;
     }
 
     .containerFormAll article {

@@ -22,50 +22,55 @@ import { ZonaPets } from "../main-page/components/ZonaPets";
 import { Politicas } from "./pages/politicasdeprivacidad/components/Politicas";
 import { FirstStep } from "../principal-pages/registrar/components/StepForm/FirstStep";
 import { ControllerSteps } from "../principal-pages/registrar/components/StepForm/ControllerSteps";
+import { LoadScript } from "@react-google-maps/api";
 import { Registrar } from "../principal-pages/registrar/components/Registrar";
 
 export function RouterInfoPages() {
     const width = useWidth()
-
-    return (
+    const libraries = ['geometry'];
+    return (    
         <>
-            <DataUserProvider>
-                <Router>
-                    {/* {
-                        width < 600 ? (
-                            <FooterToolBar/>
-                        ) : null
-                    } */}
-                    <Routes>
-                        <Route path="/" element={<ZonaPets/>}/>
-                        <Route path="/acercade" element={<AcercaDe />} />
-                        <Route path="/terminos" element={<Tyc />} />
-                        <Route path="/politicas" element={<Politicas/>} />
-                        <Route path="/afiliate" element={<Afiliate />} />
-                        <Route path="/premium" element={<PremiumLanding />} />
-                        <Route path="/contacto" element={<Contacto />} />
-                        <Route path="/registrar/steps" element={<ControllerSteps />} />
-                        <Route path="/registrarview" element={<Registrar />} />
-                        <Route path="/faq" element={<Faq />} />
-                        <Route path="/iniciarsesion" element={<InicialLandingLogin />} />
-                        <Route path="/iniciarsesion/login" element={<AccountLogin />} />
-                        <Route path="/iniciarsesion/registrar" element={<AccountRegister />} />
-                        <Route path="/registrar" element={<UserRegister />} />
-                        <Route path="/registrar/empresa" element={<CompRegister />} />
-                        <Route path="/faq/:category/:question" element={<Respuesta />} />
-                        <Route path="/mapa" element={
-                            <FilterProvider>
-                                <GeolocationProvider>
-                                    <InfoProvider>
-                                        <Mapa />
-                                    </InfoProvider>
-                                </GeolocationProvider>
-                            </FilterProvider>
-                        } />
-                    </Routes>
-                </Router>
+            <LoadScript 
+                googleMapsApiKey={import.meta.env.VITE_GOOGLE_MAPS_KEY}
+                libraries={libraries}    
+            >
 
-            </DataUserProvider>
+                <DataUserProvider>
+                    <Router>
+                        {/* {
+                            width < 600 ? (
+                                <FooterToolBar/>
+                            ) : null
+                        } */}
+                        <Routes>
+                            <Route path="/" element={<ZonaPets/>}/>
+                            <Route path="/acercade" element={<AcercaDe />} />
+                            <Route path="/terminos" element={<Tyc />} />
+                            <Route path="/politicas" element={<Politicas/>} />
+                            <Route path="/afiliate" element={<Afiliate />} />
+                            <Route path="/premium" element={<PremiumLanding />} />
+                            <Route path="/contacto" element={<Contacto />} />
+                            <Route path="/registrar/steps" element={<ControllerSteps />} />
+                            <Route path="/registrar" element={<Registrar />} />
+                            <Route path="/faq" element={<Faq />} />
+                            <Route path="/iniciarsesion" element={<InicialLandingLogin />} />
+                            <Route path="/iniciarsesion/login" element={<AccountLogin />} />
+                            <Route path="/iniciarsesion/registrar" element={<AccountRegister />} />
+                            <Route path="/faq/:category/:question" element={<Respuesta />} />
+                            <Route path="/mapa" element={
+                                <FilterProvider>
+                                    <GeolocationProvider>
+                                        <InfoProvider>
+                                            <Mapa />
+                                        </InfoProvider>
+                                    </GeolocationProvider>
+                                </FilterProvider>
+                            } />
+                        </Routes>
+                    </Router>
+
+                </DataUserProvider>
+            </LoadScript>
         </>
     );
 }

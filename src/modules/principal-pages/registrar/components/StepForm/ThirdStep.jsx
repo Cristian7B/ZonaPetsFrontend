@@ -17,7 +17,7 @@ export function ThirdStep({setDataTypeRegistry, setAuthOptions}) {
             <>
                 <section className="containerOfHeaderForPlace">
                     <h1> 
-                        ¿Qué tipo de lugar quieres registrar?
+                        ¿Qué vínculo tienes con el lugar?
                     </h1>
                     <div className="containerCardsOfPlaceRegistry">
                         {
