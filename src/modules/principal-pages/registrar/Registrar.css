@@ -419,6 +419,111 @@
     display: none;
 }
 
+.containerForAllOfRegistrarForLanding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.containerOfRegistrarForLanding {
+    width: 1000px;
+    height: 700px;
+    width: 1400px;
+    background: rgba(97, 190, 225, 0.8);
+    backdrop-filter: blur(35px);
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.containerBlurOfRegistrarForLanding {
+    /* From https://css.glass */
+    background: rgba(217, 217, 217, 0.534);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border: 1px solid rgba(217, 217, 217, 0.36);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.leftSideContainerRegistrarForLanding {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+    text-wrap: balance;
+    gap: 5px;
+}
+
+.textSectionRegistrarForLanding {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.leftSideContainerRegistrarForLanding h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 72px;
+    color: #4B4B4B;
+}
+
+.leftSideContainerRegistrarForLanding p {
+    font-family: 'Rethink Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: #5E5E5E;
+}
+
+.tagNewContainerRegistrarForLanding {
+    background: #BEBCF0;
+    border-radius: 10px;
+    padding: 7px;
+    width: fit-content;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #6967A5;
+}
+
+.rightSideContainerRegistrarForLanding {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightSideContainerRegistrarForLanding img{
+    width: 90%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.buttonSectionRegistrarForLanding {
+    /* width: 100%; */
+}
+
+.buttonSectionRegistrarForLanding button {
+    padding: 12px 24px;
+    background: #32C8C3;
+    border-radius: 8px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    border: none;
+    width: 400px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: relative;
+}
 
 @media(width <= 1058px) {
     .containerOfHeaderForPlace h1 {

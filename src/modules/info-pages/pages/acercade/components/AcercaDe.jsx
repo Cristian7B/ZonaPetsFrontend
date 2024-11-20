@@ -7,9 +7,11 @@ import { Objetivos } from "./Objetivos"
 import { SwiperComp } from "./Swiper";
 import { Footer } from "../../../../general/components/Footer";
 import "../AcercaDe.css"
+import { PrincipalNav } from "../../../../general/components/PrincipalNav";
 export function AcercaDe() {
     return (
         <>
+            <PrincipalNav/>
             <Portada/>
             <div className="container-all">
                 <ItemMomento/>

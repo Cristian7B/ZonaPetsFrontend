@@ -1,10 +1,9 @@
-import { RouterInfoPages } from "./modules/info-pages/RouterInfoPages";
-import { Mapa } from "./modules/principal-pages/mapa/components/Mapa";
+import { RouterPage } from "./modules/Routes/RouterPage"
 
 function App() {
   return (
     <>
-      <RouterInfoPages/>
+      <RouterPage/>
     </>
   )
 }

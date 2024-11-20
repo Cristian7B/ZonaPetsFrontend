@@ -1,5 +1,5 @@
-import { CompRegister } from "../CompRegister";
-import { UserRegister } from "../UserRegister";
+import { CompRegister } from "./CompRegister";
+import { UserRegister } from "./UserRegister";
 
 export function FourthStep({setFormData, dataTypeRegistry, formData, setControllerInput}) {
     return (

@@ -48,8 +48,6 @@ export function SwiperComp() {
                 spaceBetween={50}
                 slidesPerView={1}
                 effect="fade"
-                // className="swiper-container"
-                onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 autoplay
                 loop={true}
