@@ -525,6 +525,51 @@
     position: relative;
 }
 
+.secondImageContainerRegistrarForLading {
+    display: none;
+    border-radius: 20px;
+    
+}
+
+@media(width <= 1360px) {
+    .containerBlurOfRegistrarForLanding {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .containerOfRegistrarForLanding {
+        width: 100%;
+        height: 100%;
+    }
+
+    .firstImageContainerRegistrarForLading {
+        display: none;
+    }
+
+    .secondImageContainerRegistrarForLading {
+        display: block;
+    }
+
+    .containerForAllOfRegistrarForLanding {
+        width: auto;
+        height: auto;
+    }
+
+    .rightSideContainerRegistrarForLanding {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0px 70px 70px 70px;
+    }
+
+    .rightSideContainerRegistrarForLanding img {
+        border-radius: 10px;
+        width: 100%;
+    }
+}
+
 @media(width <= 1058px) {
     .containerOfHeaderForPlace h1 {
         text-align: center;
@@ -610,6 +655,30 @@
     }
 }
 
+@media(width <= 600px) {
+    .leftSideContainerRegistrarForLanding h1 {
+        font-size: 50px;
+        line-height: 50px;
+    }
+
+    .leftSideContainerRegistrarForLanding p {
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .leftSideContainerRegistrarForLanding {
+        padding: 70px 70px 20px 70px;
+    }
+
+    .buttonSectionRegistrarForLanding button {
+        width: 100%;
+    }
+
+    .containerOfRegistrarForLanding {
+        height: 100dvh;
+    }
+}
+
 @media(width <= 500px) {
     .containerOfHeaderForPlace h1 {
         font-size: 35px;
@@ -662,6 +731,18 @@
     .containerFormAll article{
         padding: 0px;
         margin-bottom: 20px;
+    }
+
+    .secondImageContainerRegistrarForLading {
+        display: none;
+    }
+
+    .containerOfRegistrarForLanding {
+        padding: 20px;
+    }
+
+    .leftSideContainerRegistrarForLanding {
+        padding: 30px;
     }
 
 }
