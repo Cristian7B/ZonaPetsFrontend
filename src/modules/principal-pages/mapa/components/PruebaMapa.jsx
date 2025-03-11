@@ -11,7 +11,7 @@ export function PruebaMapa() {
     const [renderLocations, setRenderLocations] = useState(false)
 
     useEffect(() => {
-        axios.get("http://127.0.0.1:8000/apilocation/ubicaciones/?format=json")
+        axios.get("https://zonapets.vercel.app/apilocation/ubicaciones/?format=json")
 
             .then(response => {
                 setLocations(response.data);

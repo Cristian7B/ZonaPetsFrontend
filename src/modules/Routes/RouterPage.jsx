@@ -4,19 +4,22 @@ import { MapsComponents } from "./components/MapsComponents";
 import { LoginProvider } from "./components/LoginProvider";
 import { RoutesGroup } from "./components/RoutesGroup";
 import { GoogleMapsProvider } from "./components/GoogleMapsProvider";
+import { LocationProvider } from "./context/GeolocationContext";
 
 export function RouterPage() {
     return (    
         <>
             <GoogleMapsProvider>
                 <DataUserProvider>
-                    <Router>
-                        <Routes>
-                            {MapsComponents()}
-                            {LoginProvider()}
-                            {RoutesGroup()}
-                        </Routes>
-                    </Router>
+                    <LocationProvider>
+                        <Router>
+                            <Routes>
+                                {MapsComponents()}
+                                {LoginProvider()}
+                                {RoutesGroup()}
+                            </Routes>
+                        </Router>
+                    </LocationProvider>
                 </DataUserProvider>
             </GoogleMapsProvider>
         </>

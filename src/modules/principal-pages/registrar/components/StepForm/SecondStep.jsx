@@ -1,50 +1,24 @@
-import { GoogleMap } from "@react-google-maps/api";
+import {  GoogleMap, Marker } from "@react-google-maps/api";
+import { useState, useEffect, useRef } from "react";
 import { center } from "../../../mapa/consts";
-import { useEffect, useRef, useState } from "react";
 import userMarkerIcon from "../../../mapa/static/assets/markerUser.png";
 import pinIcon from "../../static/assets/pin-outline.svg";
+
 
 export function SecondStep({ onLocationChange, userLocation, setUserLocation, setObjectLocation, objectLocation, setAuthOptions }) {
     const mapRef = useRef(null);
     const [mapLoaded, setMapLoaded] = useState(false);
-    const markerUserRef = useRef(null);
-
+    const [markerPosition, setMarkerPosition] = useState(null);
+    console.log("USER LOCATION 2", objectLocation);
     useEffect(() => {
-        if (userLocation && mapLoaded && mapRef.current) {
-            const userLatLng = new window.google.maps.LatLng(
-                objectLocation.lat,
-                objectLocation.lng
-            );
-            if (markerUserRef.current) {
-                markerUserRef.current.setMap(null);
-            }
-            markerUserRef.current = new window.google.maps.Marker({
-                position: userLatLng,
-                map: mapRef.current,
-                icon: {
-                    url: userMarkerIcon,
-                    scaledSize: new window.google.maps.Size(60, 60),
-                },
-                draggable: true,
-            });
-
-            markerUserRef.current.addListener("dragend", (event) => {
-                const newPosition = event.latLng;
-                setUserLocation(newPosition);
-
-                const newLocation = {
-                    lat: newPosition.lat(),
-                    lng: newPosition.lng(),
-                };
-                setObjectLocation(newLocation);
-                onLocationChange(newLocation);
-            });
-
-            mapRef.current.setCenter(userLocation);
+        if (mapLoaded) {
+            const userLatLng = objectLocation;
+            setMarkerPosition(userLatLng);
+            mapRef.current.setCenter(userLatLng);
             mapRef.current.setZoom(14);
-            setAuthOptions(true)
+            setAuthOptions(true);
         }
-    }, [mapLoaded, userLocation, mapRef.current]);
+    }, [mapLoaded, objectLocation]);
 
     return (
         <div className="allContainer">
@@ -55,14 +29,35 @@ export function SecondStep({ onLocationChange, userLocation, setUserLocation, se
                     <p>Arrastra el marcador si es necesario</p>
                 </article>
                 <GoogleMap
-                    center={center}
+                    center={markerPosition || center}
                     zoom={11}
                     id="mapRegister"
                     onLoad={(map) => {
                         mapRef.current = map;
-                        setMapLoaded(true);  
+                        setMapLoaded(true);
                     }}
-                />
+                >
+                    {markerPosition && (
+                        <Marker
+                            position={markerPosition}
+                            draggable={true}
+                            icon={{
+                                url: userMarkerIcon,
+                                scaledSize: new window.google.maps.Size(60, 60),
+                            }}
+                            onDragEnd={(event) => {
+                                const newPosition = {
+                                    lat: event.latLng.lat(),
+                                    lng: event.latLng.lng(),
+                                };
+                                setMarkerPosition(newPosition);
+                                setUserLocation(newPosition);
+                                setObjectLocation(newPosition);
+                                onLocationChange(newPosition);
+                            }}
+                        />
+                    )}
+                </GoogleMap>
             </div>
         </div>
     );

@@ -43,7 +43,7 @@ export function CompRegister({formData, setFormData, setControllerInput}) {
                         <input
                             type="text"
                             id="inputForComp"
-                            name="nombre_compañia"
+                            name="nombre_compania"
                             placeholder="ZonaPets"
                             onChange={handleChange}                          
                         />

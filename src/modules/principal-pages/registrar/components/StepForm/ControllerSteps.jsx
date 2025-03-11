@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast, Toaster } from "sonner";
-import { useGeolocation } from "../../hooks/useGeolocation";
 import { useEffect, useState } from "react";
 
 import { NavForSteps } from "./NavForSteps";
@@ -11,6 +10,7 @@ import { FourthStep } from "./FourthStep";
 import { ProgressBar } from "./ProgressBar";
 
 import "../../Registrar.css";
+import { useLocation } from "../../../../Routes/context/GeolocationContext";
 
 export function ControllerSteps() {
     const [step, setStep] = useState(1);
@@ -19,7 +19,7 @@ export function ControllerSteps() {
     const [dataTypeRegistry, setDataTypeRegistry] = useState(null);
     const [authOptions, setAuthOptions] = useState(false);
     
-    const {objectLocation, setObjectLocation, setUserLocation, userLocation} = useGeolocation()
+    const {objectLocation, setObjectLocation,  userLocation, setUserLocation} = useLocation();
 
     const styleButton = {
         display: step === 4 ? "block" : "none",
@@ -29,7 +29,6 @@ export function ControllerSteps() {
         padding: "10px 20px",
         fontSize: "1.2rem",
     }
-
 
     const styleButton2 = {
         display: step === 4 ? "none" : "block",
@@ -57,19 +56,22 @@ export function ControllerSteps() {
     }
 
     const [formData, setFormData] = useState({
-        nombre_compañia: '',
-        latitud: objectLocation.lat,
-        longitud: objectLocation.lng,
+        nombre_compania: '',
+        latitud: objectLocation? objectLocation.lat : "",
+        longitud: objectLocation ? objectLocation.lng : "",
         tipo_de_negocio: '',
         correo_electronico: '',
         telefono_usuario: '',
     });
 
+    console.log(formData)
+
+
     useEffect(() => {
         setFormData(prevState => ({
             ...prevState,
-            latitud: objectLocation.lat,
-            longitud: objectLocation.lng
+            latitud: objectLocation? objectLocation.lat : "",
+            longitud: objectLocation ? objectLocation.lng : ""
         }))
     },[objectLocation])
     
@@ -84,9 +86,8 @@ export function ControllerSteps() {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        // Ejecutar `sendData` dentro de `toast.promise`, asegurándote de que sea una promesa
         toast.promise(
-            sendData(), // Llamar a la función que devuelve la promesa
+            sendData(), 
             {
                 loading: 'Registrando el lugar...',
                 success: '¡Completado!',
@@ -97,7 +98,8 @@ export function ControllerSteps() {
     
     const sendData = async () => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/back/procesar/', formData, {
+            const urlToSend = dataTypeRegistry === "Propietario del lugar" ? "empresa/": ""
+            const response = await axios.post(`https://zonapets.vercel.app/back/procesar/${urlToSend}`, formData, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -105,13 +107,14 @@ export function ControllerSteps() {
     
             if (response.data.mensaje) {
                 setFormData({
-                    nombre_compañia: '',
+                    nombre_compania: '',
                     latitud: objectLocation.lat,
                     longitud: objectLocation.lng,
                     tipo_de_negocio: '',
                     correo_electronico: null,
                     telefono_usuario: '',
                 });
+                setStep(1);
             } else if (response.data.errors) {
                 throw new Error("Errores: " + JSON.stringify(response.data.errors));
             }

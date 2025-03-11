@@ -64,7 +64,7 @@ export function InicialLandingLogin() {
         try {
             const token = window.localStorage.getItem("access_token");
             await axios.post(
-                'http://127.0.0.1:8000/api/update_user_info/', 
+                'https://zonapets.vercel.app/api/update_user_info/', 
                 formData,
                 {
                     headers: {

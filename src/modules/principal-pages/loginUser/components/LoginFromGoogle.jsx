@@ -29,7 +29,7 @@ export function LoginFromGoogle() {
         if(credentialsResponse.credential) {
             const { payload } = decodeJwt(credentialsResponse.credential)
             try {
-                const response = await axios.post("http://127.0.0.1:8000/api/google_credential/", {token: credentialsResponse.credential}, {
+                const response = await axios.post("https://zonapets.vercel.app/api/google_credential/", {token: credentialsResponse.credential}, {
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -89,7 +89,7 @@ export function LoginFromGoogle() {
             }
 
             try {
-                const response = await axios.post("http://127.0.0.1:8000/api/google_token/", {token: accessToken}, {
+                const response = await axios.post("https://zonapets.vercel.app/api/google_token/", {token: accessToken}, {
                     headers: {
                         'Content-Type': 'application/json',
                     },

@@ -56,7 +56,7 @@ export function Mapa() {
                 console.error("La geolocalización no es compatible en este navegador.");
             }
 
-            axios.get("http://127.0.0.1:8000/apilocation/ubicaciones/?format=json")
+            axios.get("https://zonapets.vercel.app/apilocation/ubicaciones/?format=json")
                 .then(response => {
                     setLocations(response.data);
                     setPlacesLocations(response.data);
@@ -83,7 +83,7 @@ export function Mapa() {
                 const marker = new window.google.maps.Marker({
                     map: mapRef.current,
                     position: { lat: parseFloat(location.latitud), lng: parseFloat(location.longitud) },
-                    title: location.nombre_compañia,
+                    title: location.nombre_compania,
                     icon: {
                         url: iconLocation,
                         scaledSize: new window.google.maps.Size(45, 45)
@@ -92,7 +92,7 @@ export function Mapa() {
 
                 marker.addListener("click", () => {
                     setPlaceSelected({
-                        nombre_compañia: location.nombre_compañia,
+                        nombre_compania: location.nombre_compania,
                         latitud: location.latitud,
                         longitud: location.longitud,
                         tipo_de_negocio: location.tipo_de_negocio,
@@ -108,7 +108,7 @@ export function Mapa() {
     }, [placesLocations]);
 
     useEffect(() => {
-        const markerReferenced = markersRef.current.find(marker => marker.title === placeSelected.nombre_compañia)
+        const markerReferenced = markersRef.current.find(marker => marker.title === placeSelected.nombre_compania)
         if(markerReferenced) {
             markerReferenced.map.panTo(markerReferenced.getPosition());
             markerReferenced.setAnimation(window.google.maps.Animation.DROP);
@@ -169,7 +169,7 @@ export function Mapa() {
                                 {
                                     placeSelected && (
                                         <InfoPlace
-                                            nombre={placeSelected.nombre_compañia}
+                                            nombre={placeSelected.nombre_compania}
                                             latitud={placeSelected.latitud}
                                             longitud={placeSelected.longitud}
                                             tipoNegocio={placeSelected.tipo_de_negocio}

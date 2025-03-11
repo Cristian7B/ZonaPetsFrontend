@@ -37,7 +37,7 @@ export function PrincipalNav () {
     const fetchDataUser = () => {
         setToken(localStorage.getItem('access_token'))
 
-        axios.get("http://127.0.0.1:8000/api/user/", {
+        axios.get("https://zonapets.vercel.app/api/user/", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -49,14 +49,14 @@ export function PrincipalNav () {
             if (error.response && error.response.status === 401) {
                 try {
                     const refreshToken = localStorage.getItem('refresh_token');
-                    const refreshResponse = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+                    const refreshResponse = await axios.post('https://zonapets.vercel.app/api/token/refresh/', {
                         refresh: refreshToken
                     });
                     
                     localStorage.setItem('access_token', refreshResponse.data.access);
                     setToken(refreshResponse.data.access);
     
-                    const retryResponse = await axios.get("http://127.0.0.1:8000/api/user/", {
+                    const retryResponse = await axios.get("https://zonapets.vercel.app/api/user/", {
                         headers: {
                             Authorization: `Bearer ${refreshResponse.data.access}`,
                         },

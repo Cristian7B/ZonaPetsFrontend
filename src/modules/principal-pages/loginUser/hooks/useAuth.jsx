@@ -10,7 +10,7 @@ export const useAuth = () => {
     const fetchDataUser = () => {
         const token = localStorage.getItem('access_token');
 
-        axios.get("http://127.0.0.1:8000/api/user/", {
+        axios.get("https://zonapets.vercel.app/api/user/", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -22,14 +22,14 @@ export const useAuth = () => {
             if (error.response && error.response.status === 401) {
                 try {
                     const refreshToken = localStorage.getItem('refresh_token');
-                    const refreshResponse = await axios.post('http://127.0.0.1:8000/api/token/refresh/', {
+                    const refreshResponse = await axios.post('https://zonapets.vercel.app/api/token/refresh/', {
                         refresh: refreshToken
                     });
                     
                     localStorage.setItem('access_token', refreshResponse.data.access);
                     setToken(refreshResponse.data.access);
     
-                    const retryResponse = await axios.get("http://127.0.0.1:8000/api/user/", {
+                    const retryResponse = await axios.get("https://zonapets.vercel.app/api/user/", {
                         headers: {
                             Authorization: `Bearer ${refreshResponse.data.access}`,
                         },
@@ -51,7 +51,7 @@ export const useAuth = () => {
 
     const registerUser = async (dataToRegister) => {
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/register/", dataToRegister, {
+            const response = await axios.post("https://zonapets.vercel.app/api/register/", dataToRegister, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -65,7 +65,7 @@ export const useAuth = () => {
 
     const loginUser = async (dataLogin) => {
         try {
-            const response = await axios.post("http://127.0.0.1:8000/api/login/", dataLogin, { withCredentials: true });
+            const response = await axios.post("https://zonapets.vercel.app/api/login/", dataLogin, { withCredentials: true });
 
             setToken(response.data.access)
 

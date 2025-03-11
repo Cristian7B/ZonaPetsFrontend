@@ -23,7 +23,7 @@ export function PlacesList() {
                 render && (
                     placesListLocations.map(place => (
                         <div onClick={() => handlePlace(place)} key={place.id} className="place-item">
-                            {place.nombre_compañia}
+                            {place.nombre_compania}
                         </div>
                     ))
                 )
